@@ -683,13 +683,11 @@ address {
 /* Social media in the footer */
 .join-footer {
   padding-top: 72px;
-  margin-left: auto;
 }
-.join-title {
-  margin-bottom: 20px;
-}
+
 .join-title,
-.label-text {
+.subscribe-label {
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -739,11 +737,6 @@ address {
   padding-top: 72px;
 }
 
-.label-text {
-  display: block;
-  padding-bottom: 20px;
-}
-
 .subscribe-field input {
   width: 359px;
   padding: 15px 0;
@@ -753,12 +746,8 @@ address {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
-.subscribe-field input {
-  padding-left: 16px;
-  color: var(--white-text-color);
-}
-
 .subscribe-field input::placeholder {
+  padding-left: 16px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
@@ -897,18 +886,18 @@ address {
   color: var(--second-text-color);
 }
 
-.form-input {
+.form-field .form-input {
   height: 40px;
   width: 448px;
   padding: 12px 12px 12px 42px;
 }
 
-.comment {
+.form-field .comment {
   padding: 12px 16px 12px;
 }
 
-.form-input,
-.comment {
+.form-field .form-input,
+.form-field .comment {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: transparent;
@@ -921,26 +910,18 @@ address {
 .form-input:hover,
 .form-input:focus,
 .form-field:hover .form-input,
-.form-field:focus .form-input,
-.comment:hover,
-.comment:focus,
-.form-field:hover .comment,
-.form-field:focus .comment {
+.form-field:focus .form-input {
   border: 1px solid var(--accent-color);
   cursor: pointer;
 }
 
-.icon-form:hover,
-.icon-form:focus,
 .form-input:hover + .icon-form,
-.form-input:focus + .icon-form {
+.form-input:focus + .icon-form,
+.form-input:focus-within + .icon-form,
+.icon-form:hover,
+.icon-form:focus {
   color: var(--accent-color);
   cursor: pointer;
-}
-
-.label-title {
-  display: flex;
-  padding-bottom: 4px;
 }
 
 .position-container {
@@ -953,18 +934,25 @@ address {
   left: 12px;
   transform: translateY(-50%);
   width: 18px;
-  color: var(--first-text-color);
   fill: currentColor;
 }
 
 textarea {
-  display: block;
   resize: none;
   height: 120px;
-  width: 448px;
+
+  /* display: block;
+  justify-content: center;
+  align-items: center; */
 }
 
 textarea::placeholder {
+  /* display: block;
+  justify-content: center;
+  align-items: center;
+  width: 416px;
+  height: 96px; */
+
   font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.01em;
